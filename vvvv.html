@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive Registaration Form</title>
+        <link rel="stylesheet" href="./responsiveRegistration.css">
+        <script type="text/javascript" lang="javascript" src="./responsiveRegistaration.js"></script>
+    </head>
+       
+    <body>
+        <h1>Student Registaration Form</h1>
+        <form  action="where.php"   method = "post"  >  
+        <div class="container" >
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="name"> Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="name" name="name" placeholder="Enter your  name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-90">
+                    <input type="email" id="email" name="email" placeholder="it should contain @,.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="mobile">Mobile:</label>
+                </div>
+                <div class="col-90">
+                    <input type="tel" id="mobile" name="mobile" placeholder="only 10 digits are allowed">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="gender" required>Gender:</label>
+                </div>
+                <div class="col-90">
+                    <input type="radio" id="male" name="gender" value="male"/>Male
+                    <input type="radio" id="female" name="gender" value="female"/>Female
+                </div>
+            </div>
+            
+            </div>
+            
+            
+            </div>
+            
+            </div>
+           
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="qualification" required >Qualification:</label>
+                </div>
+                <div class="col-90">
+                    <select name="qualification" id="qualification">
+                        <option value=" ">Select Qualification:</option>
+                        <option value="Graduation">Graduation</option>
+                        <option value="BTech.">BTech.</option>
+                        <option value="MTech.">MTech.</option>
+                        <option value="MCA">MCA</option>
+                        <option value="BCA">BCA</option>
+                    </select>
+                </div>
+            </div>
+            
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="password">Password:</label>
+                </div>
+                <div class="col-90">
+                    <input type="password" id="password" name="password" maxlength="8">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Registered" onclick="SaveStudentDetails()">
+            </div>  
+        </div>  
+    </body>
+</html>
