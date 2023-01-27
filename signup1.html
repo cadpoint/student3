@@ -1,0 +1,110 @@
+<?php
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM `register` WHERE CONCAT(`name`, `regno`, `dept`, `mark`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+    
+}
+ else {
+    $query = "SELECT * FROM `register`";
+    $search_result = filterTable($query);
+}
+
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "uma");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
+
+?>
+
+<!DOCTYPE html>
+<html>    
+    <head>    
+        <title>Registration Form</title>    
+    </head>    
+    <style>
+      html {
+        max-width: 800px;
+      }
+      body {
+        background-color: burlywood;
+        margin: 0 4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.15rem;
+      }
+      section {
+        border-bottom: lightblue solid 2px;
+      }
+      h2 {
+        font-size: 40;
+        color:brown;
+        text -align:center;
+      }
+      
+    </style>
+    <body>    
+       <font size="24">   
+         
+        <h2>Student register</h2>    
+        <form  action="connection.php"   method = "post"  >    
+            <div class = "container" style="text-align:center ; color= red ;font-size= 40px; ">    
+                <div class = "form_group">
+                    <label>name:</label>    
+                    <input type = "text" name = "name" value = "" required/>    
+                </div>    
+                <div class = "form_group">    
+                    <label>regno:</label>    
+                    <input type = "text" name = "regno" value = "" required />    
+                </div>    
+                <div class = "form_group">    
+             <label for="dept"> dept:</label>
+                  <select name="dept" id="dept">
+                    <option value ="select">select</option>
+              <option value="EEE">EEE</option>
+                  <option value="ECE">ECE</option>
+                 <option value="MECH">MECH</option>
+                  <option value="CSE">CSE</option>
+                     </select>
+                </div>    
+                <div class = "form_group">    
+                    <label>mark</label>    
+                    <input type = "text" name = "mark" value = "" required/> <br><br>   
+                    <input type ="submit" name = "submit"/>
+                    <input type="submit" value="Delete"/>
+                    <input type="submit" value="update">
+                    
+                      
+                <input type="text" name="txtNameSearch" />
+            <input class="src_btn" type="submit" name="btnSearch" value="filter" />
+            
+      
+                
+
+<tr>
+ 
+                    </form>
+                 </div>    
+            </div></div></from>
+          
+            
+            
+                    </div>
+                </div>
+             </div>
+        </form></front>
+       
+      </form>
+  
+        </form>
+        
+    </body>    
+</html>    
+
+ 
